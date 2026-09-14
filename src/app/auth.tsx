@@ -4,6 +4,7 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import Button from "@/components/Button";
+import Logo from "@/components/Logo";
 import TextField from "@/components/TextField";
 import { Colors } from "@/constants/colors";
 import { useAuth } from "@/lib/auth-context";
@@ -39,7 +40,10 @@ export default function AuthScreen() {
   return (
     <SafeAreaView style={styles.screen}>
       <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
-        <Text style={styles.brand}>VoiceUp</Text>
+        <View style={styles.brandRow}>
+          <Logo size={28} />
+          <Text style={styles.brand}>VoiceUp</Text>
+        </View>
         <Text style={styles.headline}>Welcome to VoiceUp</Text>
         <Text style={styles.subhead}>
           Amplify collective consumer power and hold organizations accountable with public backing.
@@ -86,6 +90,7 @@ const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: Colors.surface },
   content: { padding: 20, paddingBottom: 40 },
   brand: { fontSize: 15, fontWeight: "700", color: Colors.secondary, textTransform: "uppercase", letterSpacing: 1 },
+  brandRow: { flexDirection: "row", alignItems: "center", gap: 8 },
   headline: { fontSize: 28, fontWeight: "700", color: Colors.onSurface, marginTop: 8 },
   subhead: { fontSize: 14, color: Colors.onSurfaceVariant, marginTop: 6, lineHeight: 20 },
   segment: {

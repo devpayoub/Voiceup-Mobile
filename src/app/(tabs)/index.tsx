@@ -5,6 +5,7 @@ import { FlatList, Pressable, RefreshControl, StyleSheet, Text, View } from "rea
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import ComplaintCard from "@/components/ComplaintCard";
+import Logo from "@/components/Logo";
 import TextField from "@/components/TextField";
 import { Colors } from "@/constants/colors";
 import { useAuth } from "@/lib/auth-context";
@@ -53,9 +54,12 @@ export default function FeedScreen() {
   return (
     <SafeAreaView style={styles.screen} edges={["top"]}>
       <View style={styles.header}>
-        <View>
-          <Text style={styles.brand}>VoiceUp</Text>
-          <Text style={styles.headerSub}>Feed</Text>
+        <View style={styles.brandRow}>
+          <Logo size={22} />
+          <View>
+            <Text style={styles.brand}>VoiceUp</Text>
+            <Text style={styles.headerSub}>Feed</Text>
+          </View>
         </View>
         {!user && (
           <Pressable onPress={() => router.push("/auth")} style={styles.signInBtn}>
@@ -116,6 +120,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
   },
+  brandRow: { flexDirection: "row", alignItems: "center", gap: 8 },
   brand: { fontSize: 17, fontWeight: "700", color: Colors.onSurface },
   headerSub: { fontSize: 11, fontWeight: "700", color: Colors.onSurfaceVariant, textTransform: "uppercase", letterSpacing: 0.6 },
   signInBtn: { backgroundColor: Colors.secondary, paddingHorizontal: 14, paddingVertical: 8, borderRadius: 999 },
