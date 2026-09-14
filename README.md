@@ -1,9 +1,9 @@
-# mobile (Expo / React Native)
+# VoiceUp — mobile
 
-Native client for the citizen complaints platform.
+The native iOS/Android client for VoiceUp, built with Expo — the same filing, backing, and tracking flow as the web app, made for use on the go.
 
-| Function | Why it's needed |
-|---|---|
-| Same core flow as web (auth, feed, submit, detail, profile) | Service failures (an outage, a transit delay) are usually noticed and reported on a phone, not at a desk — the mobile app is the realistic filing path for most users. |
-| Photo picker for evidence | Lets a citizen attach a photo straight from their camera roll when filing, matching how they'd actually document an issue in the moment. |
-| Secure on-device token storage | Mobile has no `localStorage`; auth tokens are kept in the OS-level secure store (Keychain/Keystore) instead. |
+## Why use it
+
+- **You notice the problem on your phone, so file it there.** An outage, a broken elevator, a transit delay — these get spotted and documented in the moment, not later at a desk.
+- **Evidence straight from your camera roll.** Attaching a photo of a bill or a broken meter is one tap, not a detour through email-to-yourself.
+- **Your session stays yours.** Auth tokens are kept in the OS-level secure store (Keychain/Keystore), not plain device storage.
